@@ -7,17 +7,11 @@ import lime.graphics.WebGLRenderContext;
 import lime.utils.Float32Array;
 import lime.utils.UInt16Array;
 import lime.math.Matrix4;
-
-
+import lime.graphics.opengl.GLProgram;
 
 import kitGL.glLime.Shaders;
 import kitGL.glLime.HelpGL;
 import kitGL.glLime.BufferGL;
-
-#if js
-import kitGL.glWeb.Texture;
-import kitGL.glWeb.DivertTrace;
-#end
 
 import trilateral3.Trilateral;
 import trilateral3.drawing.Pen;
@@ -35,30 +29,29 @@ class AppGL{
     function new( width_: Int, height_: Int ){
         width = width_;
         height = height_;
-        setup();
     }
     // override this
     public
     function update(){
         
     }
-    inline
+    public inline
     function setup( gl: WebGLRenderContext ){
-        
         program = programSetup( gl, vertexString0, fragmentString0 );
         draw( penNodule.pen );
         interleaveXYZ_RGBA( gl
                           , program
-                          , penNodule.data
+                          , cast penNodule.data
                           , 'vertexPosition', 'vertexColor' );
     }
     // override this
     public
     function draw( pen: Pen ){
     }
+    public inline
     function render( gl: WebGLRenderContext ){
         clearAll( gl, width, height );
         gl.useProgram( program );
-        gl.drawArrays( RenderingContext.TRIANGLES, 0, penNodule.size );
+        gl.drawArrays( gl.TRIANGLES, 0, penNodule.size );
     }
 }
