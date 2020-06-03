@@ -1,5 +1,6 @@
-package trilateralLimeBasic.app;
+package trilateralLimeBasic;
 import lime.graphics.RenderContext;
+
 class NonGL{
     var width: Int;
     var height: Int;

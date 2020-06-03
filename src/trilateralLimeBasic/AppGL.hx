@@ -10,9 +10,9 @@ import lime.math.Matrix4;
 
 
 
-import kitGL.glKit.Shaders;
-import kitGL.glKit.HelpGL;
-import kitGL.glKit.BufferGL;
+import kitGL.glLime.Shaders;
+import kitGL.glLime.HelpGL;
+import kitGL.glLime.BufferGL;
 
 #if js
 import kitGL.glWeb.Texture;

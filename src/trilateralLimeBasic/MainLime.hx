@@ -2,8 +2,8 @@ package trilateralLimeBasic;
 import lime.graphics.RenderContext;
 import lime.graphics.WebGLRenderContext;
 import lime.app.Application;
-import trilateralLimeBasic.app.AppGL;
-import trilateralLimeBasic.app.NonGL;
+import trilateralLimeBasic.AppGL;
+import trilateralLimeBasic.NonGL;
 // your main application needs to extend this only to overriding createAppGL
 // put your main code in extended AppGL.
 // TODO: some more thought required in terms of structures for mousing and keys.
